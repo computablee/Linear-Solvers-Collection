@@ -17,7 +17,6 @@ function [r, iters, residual] = jacobi(A, b, max, tolerance)
             end
             new(i) = -temp + (b(i) / A(i, i));
         end
-        disp(new);
         k = k + 1;
     end
 
