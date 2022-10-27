@@ -10,8 +10,10 @@ A = transpose(A) * A;
 
 b = rand(matrixSize, 1);
 
-[x, iters] = cg(A, b, 1000, 0.000001);
+[x, iters, residual] = cg(A, b, 1000, 0.000001);
 fprintf("Took %d iterations\n", iters);
+disp("Residual:")
+disp(residual);
 disp("A:");
 disp(A);
 disp("x:");

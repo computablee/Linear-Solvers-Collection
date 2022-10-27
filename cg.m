@@ -1,4 +1,4 @@
-function [x, iters] = cg(A, b, max, tolerance)
+function [x, iters, residual] = cg(A, b, max, tolerance)
     k = 0;
     s = size(A);
     x = zeros(s(1), 1);
@@ -23,6 +23,7 @@ function [x, iters] = cg(A, b, max, tolerance)
     end
 
     iters = k;
+    residual = b - A * x;
 end
 
 function i = innerprod(A, v, u)

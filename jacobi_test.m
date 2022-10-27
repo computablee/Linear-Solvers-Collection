@@ -6,7 +6,8 @@ b = rand(matrixSize, 1);
 
 [x, iters, residual] = jacobi(A, b, 100, 0.000001);
 fprintf("Took %d iterations\n", iters);
-fprintf("Residual is %d\n", residual);
+disp("Residual:")
+disp(residual);
 disp("A:");
 disp(A);
 disp("x:");

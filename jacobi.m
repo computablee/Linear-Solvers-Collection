@@ -1,4 +1,4 @@
-function [r, iters, residual] = jacobi(A, b, max, tolerance)
+function [x, iters, residual] = jacobi(A, b, max, tolerance)
     s = size(A);
     old = zeros(s(1),1);
     new = ones(s(1),1);
@@ -20,7 +20,7 @@ function [r, iters, residual] = jacobi(A, b, max, tolerance)
         k = k + 1;
     end
 
-    r = new;
+    x = new;
     iters = k;
-    residual = norm(old - new);
+    residual = b - A * x;
 end
