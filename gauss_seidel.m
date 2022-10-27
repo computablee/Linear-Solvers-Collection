@@ -3,7 +3,7 @@ function [r, iters, residual] = gauss_seidel(A, b, max, tolerance)
     old = zeros(s(1),1);
     new = ones(s(1),1);
 
-    k = 1;
+    k = 0;
     while (k < max) && (norm(old - new) > tolerance)
         old = new;
         new = zeros(s(1), 1);
